@@ -1,0 +1,76 @@
+﻿@model Asp.netMVCCRUD.Models.Imone
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Įmonės Forma</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddOrEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ImonesKodas" class="control-label"></label>
+                <input asp-for="ImonesKodas" class="form-control" />
+                <span asp-validation-for="ImonesKodas" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Pavadinimas" class="control-label"></label>
+                <input asp-for="Pavadinimas" class="form-control" />
+                <span asp-validation-for="Pavadinimas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElPastas" class="control-label"></label>
+                <input asp-for="ElPastas" class="form-control" />
+                <span asp-validation-for="ElPastas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogasElPastas" class="control-label"></label>
+                <input asp-for="BlogasElPastas" class="form-control" />
+                <span asp-validation-for="BlogasElPastas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelNr" class="control-label"></label>
+                <input asp-for="TelNr" class="form-control" />
+                <span asp-validation-for="TelNr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apskritis" class="control-label"></label>
+                <input asp-for="Apskritis" class="form-control" />
+                <span asp-validation-for="Apskritis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VMVT" class="control-label"></label>
+                <input asp-for="VMVT" class="form-control" />
+                <span asp-validation-for="VMVT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KitaInfo" class="control-label"></label>
+                <input asp-for="KitaInfo" class="form-control" />
+                <span asp-validation-for="KitaInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AktualiVeikla" class="control-label"></label>
+                <input asp-for="AktualiVeikla" class="form-control" />
+                <span asp-validation-for="AktualiVeikla" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Patvirtinti" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Atgal į sąrašą</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

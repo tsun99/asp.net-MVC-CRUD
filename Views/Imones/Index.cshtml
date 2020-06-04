@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Asp.netMVCCRUD.Models.Imone>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Įmonės</h4>
+
+<hr />
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pavadinimas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElPastas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogasElPastas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apskritis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VMVT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KitaInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AktualiVeikla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImonesKodas)
+            </th>
+            <th
+                ><a asp-action="AddOrEdit"class="btn btn-outline-success"><i class="far fa-plus-square"></i>Įmonė</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pavadinimas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElPastas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogasElPastas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apskritis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VMVT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KitaInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AktualiVeikla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImonesKodas)
+            </td>
+            <td>
+                <a asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1" onclick="return confirm('Ar tikrai norite pašalinti šią įmonę iš sąrašo?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
